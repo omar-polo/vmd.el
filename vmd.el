@@ -90,7 +90,7 @@ commands in cmd."
   (shell-command (mapconcat #'shell-quote-argument (cons vmd-vmctl-cmd args) " ")))
 
 (defun vmd-console (vm)
-  "Open a console for the virtual machine VM at point."
+  "Open a console for the VM at point."
   (interactive (list (vmd--vm-at-point)) vmd-mode)
   (funcall vmd-console-function
            (concat "vmd console " vm)
@@ -98,25 +98,25 @@ commands in cmd."
                    (list vmd-vmctl-cmd "console" vm))))
 
 (defun vmd-pause (vm)
-  "Pause the virtual machine VM at point."
+  "Pause the VM at point."
   (interactive (list (vmd--vm-at-point)) vmd-mode)
   (vmd--vmctl "pause" vm)
   (vmd--update-table))
 
 (defun vmd-start (vm)
-  "Start the virtual machine VM at point."
+  "Start the VM at point."
   (interactive (list (vmd--vm-at-point)) vmd-mode)
   (vmd--vmctl "start" vm)
   (vmd--update-table))
 
 (defun vmd-stop (vm)
-  "Stop the virtual machine VM at point."
+  "Stop the VM at point."
   (interactive (list (vmd--vm-at-point)) vmd-mode)
   (vmd--vmctl "stop" vm)
   (vmd--update-table))
 
 (defun vmd-unpause (vm)
-  "Unpause the virtual machine VM at point."
+  "Unpause the VM at point."
   (interactive (list (vmd--vm-at-point)) vmd-mode)
   (vmd--vmctl "unpause" vm)
   (vmd--update-table))
