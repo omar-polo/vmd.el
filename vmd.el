@@ -66,7 +66,8 @@ commands in cmd."
                       (mapcar (lambda (x)
                                 (split-string x nil t))
                               (cdr
-                               (split-string (shell-command-to-string "vmctl status")
+                               (split-string (shell-command-to-string
+                                              (concat vmd-vmctl-cmd " status"))
                                              "\n" t))))))
     (setq tabulated-list-format columns
           tabulated-list-entries rows)
@@ -86,7 +87,7 @@ commands in cmd."
 
 (defun vmd--vmctl (&rest args)
   "Run a vmctl command with ARGS."
-  (shell-command (mapconcat #'shell-quote-argument (cons "vmctl" args) " ")))
+  (shell-command (mapconcat #'shell-quote-argument (cons vmd-vmctl-cmd args) " ")))
 
 (defun vmd-console (vm)
   "Open a console for the virtual machine VM at point."
