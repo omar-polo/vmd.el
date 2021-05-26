@@ -2,6 +2,8 @@
 
 vmd is an Emacs package to interact with [OpenBSD' vmd][vmd].
 
+![vmd buffer with transient open](vmd.png)
+
 
 ### vterm integration
 
