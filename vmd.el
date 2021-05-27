@@ -22,7 +22,12 @@
 
 ;;; Commentary:
 
-;; TODO
+;; vmd.el is an interface to list and manage OpenBSD' vmd virtual
+;; machines.
+;;
+;; To start, run `M-x vmd RET' to bring up a *vmd* buffer with the list
+;; of virtual machines.  Then press `x' to bring up a transient with
+;; the action aviable.
 
 ;;; Code:
 
