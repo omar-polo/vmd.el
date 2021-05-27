@@ -31,7 +31,6 @@
 
 (defgroup vmd nil
   "Vmd."
-  :prefix "vmd-"
   :group 'vmd)
 
 (defcustom vmd-vmctl-cmd "vmctl"
